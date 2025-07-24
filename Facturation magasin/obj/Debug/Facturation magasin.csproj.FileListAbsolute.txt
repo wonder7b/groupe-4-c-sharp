@@ -1,0 +1,15 @@
+c:\users\admin\documents\visual studio 2015\Projects\Facturation magasin\Facturation magasin\bin\Debug\Facturation magasin.exe.config
+c:\users\admin\documents\visual studio 2015\Projects\Facturation magasin\Facturation magasin\bin\Debug\Facturation magasin.exe
+c:\users\admin\documents\visual studio 2015\Projects\Facturation magasin\Facturation magasin\bin\Debug\Facturation magasin.pdb
+c:\users\admin\documents\visual studio 2015\Projects\Facturation magasin\Facturation magasin\obj\Debug\Facturation magasin.csprojResolveAssemblyReference.cache
+c:\users\admin\documents\visual studio 2015\Projects\Facturation magasin\Facturation magasin\obj\Debug\Facturation_magasin.Properties.Resources.resources
+c:\users\admin\documents\visual studio 2015\Projects\Facturation magasin\Facturation magasin\obj\Debug\Facturation magasin.csproj.GenerateResource.Cache
+c:\users\admin\documents\visual studio 2015\Projects\Facturation magasin\Facturation magasin\obj\Debug\Facturation magasin.exe
+c:\users\admin\documents\visual studio 2015\Projects\Facturation magasin\Facturation magasin\obj\Debug\Facturation magasin.pdb
+c:\users\admin\documents\visual studio 2015\Projects\Facturation magasin\Facturation magasin\obj\Debug\Facturation_magasin.Initiation.resources
+c:\users\admin\documents\visual studio 2015\Projects\Facturation magasin\Facturation magasin\bin\Debug\System.Data.SQLite.dll
+c:\users\admin\documents\visual studio 2015\Projects\Facturation magasin\Facturation magasin\bin\Debug\System.Data.SQLite.xml
+C:\Users\ADMIN\documents\visual studio 2015\Projects\Facturation magasin\Facturation magasin\obj\Debug\Facturation_magasin.AjoutProduit.resources
+C:\Users\ADMIN\documents\visual studio 2015\Projects\Facturation magasin\Facturation magasin\obj\Debug\Facturation_magasin.Facturation.resources
+C:\Users\ADMIN\documents\visual studio 2015\Projects\Facturation magasin\Facturation magasin\obj\Debug\Facturation_magasin.ModificationProduit.resources
+C:\Users\ADMIN\documents\visual studio 2015\Projects\Facturation magasin\Facturation magasin\obj\Debug\Facturation_magasin.ProduitForm.resources
