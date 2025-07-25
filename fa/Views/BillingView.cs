@@ -157,7 +157,7 @@ namespace fa.Views
             }
 
             var receipt = GenerateReceipt();
-            MessageBox.Show(receipt, "Ticket de Caisse", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(receipt, "Facture G4 Market", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
             ResetTransaction();
         }
