@@ -43,7 +43,7 @@ namespace fa.Views
             customerNameLabel.Text = "Nom du client :";
             customerPhoneLabel.Text = "N° de téléphone :";
             productSearchGroupBox.Text = "Recherche de Produit";
-            productCodeLabel.Text = "Code produit :";
+            productCodeLabel.Text = "Code :";
             searchProductButton.Text = "Rechercher";
             addToCartButton.Text = "Ajouter au Panier";
             deleteFromCartButton.Text = "Retirer du Panier";
@@ -75,7 +75,7 @@ namespace fa.Views
 
             if (_foundProduct != null)
             {
-                foundProductNameLabel.Text = _foundProduct.Name;
+                foundProductNameLabel.Text = _foundProduct.Nom;
                 addToCartButton.Enabled = true;
                 quantityNumericUpDown.Focus();
             }
@@ -93,16 +93,16 @@ namespace fa.Views
             if (_foundProduct == null) return;
             
             var quantity = (int)quantityNumericUpDown.Value;
-            var existingCartItem = _cart.FirstOrDefault(item => item.Product.Id == _foundProduct.Id);
+            var existingCartItem = _cart.FirstOrDefault(item => item.Produit.Id == _foundProduct.Id);
 
             if (existingCartItem != null)
             {
-                existingCartItem.Quantity += quantity;
+                existingCartItem.Quantite += quantity;
                 _cart.ResetBindings(); 
             }
             else
             {
-                _cart.Add(new CartItem { Product = _foundProduct, Quantity = quantity });
+                _cart.Add(new CartItem { Produit = _foundProduct, Quantite = quantity });
             }
             
             UpdateTotals();
@@ -125,8 +125,8 @@ namespace fa.Views
 
         private void UpdateTotals()
         {
-            decimal subTotal = _cart.Sum(item => item.TotalPrice);
-            decimal taxAmount = _cart.Sum(item => CalculateTax(item.Product) * item.Quantity);
+            decimal subTotal = _cart.Sum(item => item.PrixTotal);
+            decimal taxAmount = _cart.Sum(item => CalculateTax(item.Produit) * item.Quantite);
             decimal total = subTotal + taxAmount;
 
             subTotalValueLabel.Text = subTotal.ToString("C", CultureHelper.CongoleseFranc);
@@ -144,8 +144,8 @@ namespace fa.Views
         
         private decimal CalculateTax(Product product)
         {
-            decimal taxRate = GetTaxRate(product.TaxCategory);
-            return product.Price * taxRate;
+            decimal taxRate = GetTaxRate(product.Categorie);
+            return product.Prix * taxRate;
         }
 
         private void PrintReceiptButton_Click(object sender, EventArgs e)
@@ -181,8 +181,8 @@ namespace fa.Views
 
             foreach (var item in _cart)
             {
-                var formattedPrice = item.TotalPrice.ToString("C", CultureHelper.CongoleseFranc);
-                sb.AppendLine($"{item.Product.Name,-20} (x{item.Quantity}) {formattedPrice,15}");
+                var formattedPrice = item.PrixTotal.ToString("C", CultureHelper.CongoleseFranc);
+                sb.AppendLine($"{item.Produit.Nom,-20} (x{item.Quantite}) {formattedPrice,15}");
             }
 
             sb.AppendLine("----------------------------------------");

@@ -19,20 +19,20 @@ public class Product
     /// <summary>
     /// Nom d'affichage du produit.
     /// </summary>
-    public string Name { get; set; }
+    public string Nom { get; set; }
 
     /// <summary>
     /// Prix de vente unitaire.
     /// </summary>
-    public decimal Price { get; set; }
+    public decimal Prix { get; set; }
 
     /// <summary>
     /// Catégorie de TVA applicable au produit.
     /// </summary>
-    public TaxCategory TaxCategory { get; set; }
+    public TaxCategory Categorie { get; set; }
 
     public override string ToString()
     {
-        return Name; // Utilisé pour l'affichage dans les listes.
+        return Nom; // Utilisé pour l'affichage dans les listes.
     }
 }

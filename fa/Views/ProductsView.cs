@@ -76,9 +76,9 @@ namespace fa.Views
             {
                 _selectedProduct = (Product)productsDataGridView.SelectedRows[0].DataBoundItem;
                 codeTextBox.Text = _selectedProduct.Code;
-                nameTextBox.Text = _selectedProduct.Name;
-                priceNumericUpDown.Value = _selectedProduct.Price;
-                taxCategoryComboBox.SelectedItem = _selectedProduct.TaxCategory;
+                nameTextBox.Text = _selectedProduct.Nom;
+                priceNumericUpDown.Value = _selectedProduct.Prix;
+                taxCategoryComboBox.SelectedItem = _selectedProduct.Categorie;
                 deleteProductButton.Enabled = true;
             }
         }
@@ -86,29 +86,29 @@ namespace fa.Views
         private void SaveButton_Click(object sender, EventArgs e)
         {
             var code = codeTextBox.Text.Trim();
-            var name = nameTextBox.Text.Trim();
-            var price = priceNumericUpDown.Value;
-            var taxCategory = (TaxCategory)taxCategoryComboBox.SelectedItem;
+            var nom = nameTextBox.Text.Trim();
+            var prix = priceNumericUpDown.Value;
+            var categorie = (TaxCategory)taxCategoryComboBox.SelectedItem;
 
-            if (!ValidateInput(code, name, price)) return;
+            if (!ValidateInput(code, nom, prix)) return;
 
             if (_selectedProduct == null) // Add new product
             {
                 var newProduct = new Product
                 {
                     Code = code,
-                    Name = name,
-                    Price = price,
-                    TaxCategory = taxCategory
+                    Nom = nom,
+                    Prix = prix,
+                    Categorie = categorie
                 };
                 _dbContext.Products.Add(newProduct);
             }
             else // Update existing product
             {
                 _selectedProduct.Code = code;
-                _selectedProduct.Name = name;
-                _selectedProduct.Price = price;
-                _selectedProduct.TaxCategory = taxCategory;
+                _selectedProduct.Nom = nom;
+                _selectedProduct.Prix = prix;
+                _selectedProduct.Categorie = categorie;
                 _dbContext.Products.Update(_selectedProduct);
             }
 
@@ -145,7 +145,7 @@ namespace fa.Views
         {
             if (_selectedProduct != null)
             {
-                var result = MessageBox.Show($"Êtes-vous sûr de vouloir supprimer le produit '{_selectedProduct.Name}' ?", 
+                var result = MessageBox.Show($"Êtes-vous sûr de vouloir supprimer le produit '{_selectedProduct.Nom}' ?", 
                                              "Confirmation de suppression", 
                                              MessageBoxButtons.YesNo, 
                                              MessageBoxIcon.Warning);

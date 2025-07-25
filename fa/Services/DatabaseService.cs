@@ -19,10 +19,10 @@ namespace fa.Services
         {
             // Ajoute des données initiales (seeding) lors de la création de la base de données.
             modelBuilder.Entity<Product>().HasData(
-                new Product { Id = 1, Code = "001", Name = "Ordinateur Portable", Price = 1200, TaxCategory = TaxCategory.A },
-                new Product { Id = 2, Code = "002", Name = "Souris Gamer", Price = 45, TaxCategory = TaxCategory.A },
-                new Product { Id = 3, Code = "003", Name = "Livre C# pour les Pros", Price = 35, TaxCategory = TaxCategory.C },
-                new Product { Id = 4, Code = "004", Name = "Clavier Mécanique", Price = 150, TaxCategory = TaxCategory.B }
+                new Product { Id = 1, Code = "001", Nom = "Ordinateur Portable", Prix = 1200, Categorie = TaxCategory.A },
+                new Product { Id = 2, Code = "002", Nom = "Souris", Prix = 45, Categorie = TaxCategory.A },
+                new Product { Id = 3, Code = "003", Nom = "Livre C#", Prix = 35, Categorie = TaxCategory.C },
+                new Product { Id = 4, Code = "004", Nom = "Clavier", Prix = 150, Categorie = TaxCategory.B }
             );
         }
     }
